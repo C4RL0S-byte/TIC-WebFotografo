@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.homepage{
+    background-image: url("/img/HOME1.jpg");
+    height: 100vh;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . ." 
+        ". title ."
+        ". . ."
+        ". . ."
+        "arrow arrow arrow";
+}
+
+.title{
+    animation: apparition 2s linear 1;
+    grid-area: title;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    ". p .";
+}
+@keyframes apparition{
+    0%{
+        color: transparent;
+        opacity: 0%;
+    }
+    25%{
+        opacity: 25%;
+    }
+    50%{
+        opacity: 50%;
+    }
+    75%{
+        opacity: 75%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.title p {
+    grid-area: p;
+    font-weight: bolder;
+    font-size: 5rem;
+    color: #FFBBDC;
+    font-family: Comfortaa;
+}
+
+.arrow{
+    grid-area: arrow;
+    justify-self: center;
+    color:#FFBBDC;
+    font-size: 50px;
+    animation: apparition 2s linear 1;
+}
+
+/*   HOMEPAGE1     */
+
+.homepage1{
+    background-image: url("img/artem-sapegin-XGDBdSQ70O0-unsplash\ \(1\).jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "nav nav nav"
+    ". . ."
+    ". . ."
+    "info . ."
+    ". . .";
+
+}
+
+.main-nav{
+    top: 5rem;
+    width: 100%;
+    grid-area: nav;
+    align-self: center;
+}
+
+.main-nav ul li{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.main-nav ul li a{
+    justify-self: center;
+    text-decoration: none;
+    padding: 10px;
+    color: #FFBBDC;
+    font-family: Comfortaa;
+    font-weight: bolder;
+    font-size: 2rem;
+    background-color: #1F2B21;
+    border-radius: 10px;
+    width: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoText{
+    width: min-content;
+    margin: auto;
+}
+
+.infoText p{
+    font-family: Comfortaa;
+    color: #FFBBDC;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+@media (max-width: 900px) {
+    .main-nav ul li {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;    
+    }
+}
